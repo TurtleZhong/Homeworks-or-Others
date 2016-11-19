@@ -1,0 +1,32 @@
+clear all;
+clc; 
+Image = imread('lena.jpg'); %载入图片
+Image = rgb2gray(Image);  %灰度化
+origin_hist = origin_histogram(Image); %调用自己写的原始直方图生成函数
+normal_hist = normalized_histogram(Image); %调用自己写的规范化原始直方图生成函数
+cumulative_hist = cumulative_histogram
+ 
+
+
+
+figure;
+subplot(231);bar(0:255,origin_hist,'b');
+title('origin histogram') 
+
+subplot(232);bar(0:255,normal_hist,'b');  
+title('normalized histogram') 
+ 
+subplot(233);bar(0:255,GPeq,'b') 
+title('cumulative histogram') 
+ 
+X=Image;
+for i=0:255
+    X(find(Image==i)) = S2(i+1);
+end
+
+subplot(234);imshow(Image);
+title('origin image') ;
+subplot(235);imshow(Image);
+title('normalized image') ;
+subplot(236);imshow(X);
+title('cumulative image');
